@@ -1,0 +1,81 @@
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Log-in</title>
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  <link rel="icon" href="log.ico">
+	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+			<div class="top-container">
+    		<img class="top" src="{% static 'assets/images/CC.png' %}" alt="logo">
+			</div>
+			<div class= "bottom">
+				<div class="cont">
+
+	          <div class="form sign-in">
+				   <form class="needs-validation w-75 mx-auto" method="post" action="{% url 'login' %}" novalidate>
+                        {% csrf_token %}
+	              <h2>Welcome</h2>
+	              <label>
+	                  <span>Username</span>
+	                  <input type="text" name="username" />
+	              </label>
+	              <label>
+	                  <span>Password</span>
+	                  <input type="password" name="password" id="password" required/>
+	              </label>
+	              <p class="forgot-pass">Forgot password?</p>
+	              <button type="submit"  class="submit">Sign In</button></a>
+				   </form>
+	          </div>
+	          <div class="sub-cont">
+	              <div class="img">
+	                  <div class="img__text m--up">
+
+	                      <h3>Don't have an account? Please Sign up!<h3>
+	                  </div>
+	                  <div class="img__text m--in">
+
+	                      <h3>If you already has an account, just sign in.<h3>
+	                  </div>
+	                  <div class="img__btn">
+	                      <span class="m--up">Sign Up</span>
+	                      <span class="m--in">Sign In</span>
+	                  </div>
+	              </div>
+	              <div class="form sign-up">
+	                  <h2>Create your Account</h2>
+	                  <label>
+	                      <span>Name</span>
+	                      <input type="text" />
+	                  </label>
+	                  <label>
+	                      <span>Email</span>
+	                      <input type="email" />
+	                  </label>
+	                  <label>
+	                      <span>Password</span>
+	                      <input type="password" />
+	                  </label>
+	                  <button type="button" class="submit">Sign Up</button>
+
+	              </div>
+	          </div>
+	      </div>
+			</div>
+
+
+
+      <script>
+          document.querySelector('.img__btn').addEventListener('click', function() {
+              document.querySelector('.cont').classList.toggle('s--signup');
+          });
+      </script>
+</body>
+
+</html>

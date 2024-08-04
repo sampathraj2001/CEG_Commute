@@ -1,0 +1,36 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+    <div>
+    <br>
+    <table id="example" class="table table-bordered table-striped">
+                        <thead class="table-dark text-capitalize">
+                            <tr >
+                                <th scope="col" style="width: 35% !important;">Volunteer</th>
+                                <th scope="col" >Details</th>
+                                <th scope="col">Request</th>
+                            </tr>
+                        </thead>
+                        {% for i in context.Request %}
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+
+                                        <a class="ms-2">{{i.Student}}</a><br>
+                                        <i class="fa fa-map-marker text-success "></i> : <span>{{i.StudentArea}}</span><br>
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <a class="text-warning"><i class="fa fa-lg ms-2 fa-male"></i></a><br>
+                                </td>
+                                <td>
+
+                                    <button type="submit" class="btn btn-primary">Accept</button>
+                            </td>
+                            </tr>
+                        </tbody>
+                        {% endfor %}
+                    </table>
+
+        </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'base.html' %}{% load static %}{% block content %}
+        <div class="container">
+            <div class="row">
+                <div >
+                    <form id="contact" action="" method="post">
+                        <div class="row">
+                          <div class="col-md-4">
+                                <!-- START widget-->
+                                <div class="panel widget">
+                                   <div class="half-float">
+                                      <img src="https://bootdey.com/img/Content/bg1.jpg" alt="" class="img-responsive">
+                                      <div class="half-float-bottom">
+                                         <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image" class="img-thumbnail img-circle thumb128">
+                                      </div>
+                                   </div>
+                                    {% for i in context.companion %}
+                                   <div class="panel-body text-center">
+                                      <h3 class="m0">{{i.Volunteer}}</h3>
+                                   </div>
+                                    {% endfor %}
+                                </div>
+                            <div class="col-lg-12">
+                                <button type="submit" id="form-submit" class="main-button ">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="col-lg-6 right-map">
+                        <div id="map">
+
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124390.60115489588!2d80.24883663022348!3d13.022531646806849!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba8f64332436e5f%3A0xb6f3e0a8c0889229!2sAnna%20University!5e0!3m2!1sen!2sin!4v1651077220760!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+{% endblock %}

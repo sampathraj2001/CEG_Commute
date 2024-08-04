@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <title>CEG Commute - Settings</title>
+
+
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/profile.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+
+  </head>
+
+<body>
+
+  <div class="loader">
+    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+       width="34px" height="40px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+      <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.8s" repeatCount="indefinite" />
+      </rect>
+      <rect x="8" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
+      </rect>
+      <rect x="16" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
+      </rect>
+    </svg>
+  </div>
+
+  <header id="#top">
+
+      <nav class="main-navigation navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href=""><img src="{% static 'assets/images/comtext.png' %}" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" href="{% url 'student' %}">Student</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'volunteer' %}">Volunteer</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'info' %}">
+                    <img src="{% static 'assets\images\Prof_Icon.png' %}" class="main-profile-img" />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </nav>
+
+  </header>
+
+<div class="profbox">
+  <div class="wrapper bg-white mt-sm-5">
+    <h4 class="pb-4 border-bottom">Account settings</h4>
+    <div class="d-flex align-items-start py-3 border-bottom">
+        <img src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
+            class="img" alt="">
+        <div class="pl-sm-4 pl-2 info" id="img-section">
+            <b>Profile Photo</b>
+            <p>Choose a profile picture</p>
+            <button class="btn button border"><b>Upload</b></button>
+        </div>
+    </div>
+      {% for i in context.Details %}
+    <div class="py-2">
+        <div class="row py-2">
+            <div class="col-md-6 ">
+                <label for="firstname">First Name</label>
+                <input type="text" class="bg-light form-control" value="{{i.Name}}">
+            </div>
+            <div class="col-md-6 pt-md-0 pt-3">
+                <label for="lastname">Last Name</label>
+                <input type="text" class="bg-light form-control" value="{{i.Name}}">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-6">
+                <label for="email">Email Address</label>
+                <input type="text" class="bg-light form-control" value="{{i.Email}}">
+            </div>
+            <div class="col-md-6 pt-md-0 pt-3">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="bg-light form-control" value="{{i.PhoneNumber}}">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-6">
+                <label for="email">Campus</label>
+                <input type="text" class="bg-light form-control" value="{{i.Campus}}">
+            </div>
+            <div class="col-md-6">
+                <label for="year">Year</label>
+                <select name="year" id="year" class="bg-light">
+                    <option value="1st Year" selected>1st Year</option>
+                    <option value="2nd Year">2nd Year</option>
+                    <option value="3rd Year">3rd Year</option>
+                    <option value="4th Year">4th Year</option>
+                    <option value="5th Year">5th Year</option>
+                </select>
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-md-6">
+                <label for="location" Location>Location</label>
+                <select name="location" id="location" class="bg-light">
+                    <option value="Porur" selected>Porur</option>
+                    <option value="Adyar">Adyar</option>
+                    <option value="Besant Nagar">Besant Nagar</option>
+                    <option value="Poonamalle">Poonamalle</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="py-3 pb-4 border-bottom">
+            <button class="btn button border"><b>Save Changes</b></button>
+            <button class="btn button border"><b>Cancel</b></button>
+        </div>
+        <div class="d-sm-flex align-items-center pt-3" id="deactivate">
+            <div>
+                <b>Deactivate your account</b>
+                <p>Details about your company account and password</p>
+            </div>
+            <div class="ml-auto">
+                <button class="btn danger">Deactivate</button>
+            </div>
+        </div>
+    </div>
+      {% endfor %}
+</div>
+</div>
+
+
+
+
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/isotope.min.js' %}"></script>
+  <script src="{% static 'assets/js/owl-carousel.js' %}"></script>
+  <script src="{% static 'assets/js/wow.js' %}"></script>
+  <script src="{% static 'assets/js/tabs.js' %}"></script>
+  <script src="{% static 'assets/js/popup.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script>
+    setTimeout(function(){
+        $('.loader').fadeToggle();
+    }, 1500);
+
+	$("a[href='#top']").click(function() {
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
+    });
+  </script>
+
+</body>
+</html>
